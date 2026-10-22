@@ -1,11 +1,11 @@
 package com.endana.app.domain.repository
 
-import com.endana.app.domain.model.Product
+import com.endana.app.domain.model.ProductModel
 import kotlinx.coroutines.flow.Flow
 
 interface ProductRepository {
 
-    fun getProducts(): Flow<List<Product>>
+    fun getProducts(): Flow<List<ProductModel>>
 
-    suspend fun getProductById(id: Int): Product
+    suspend fun getProductById(id: Int): ProductModel
 }
