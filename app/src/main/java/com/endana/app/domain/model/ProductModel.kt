@@ -2,7 +2,7 @@ package com.endana.app.domain.model
 
 
 
-data class Product(
+data class ProductModel(
     val image: String,
     val id: Int,
     val title: String,
