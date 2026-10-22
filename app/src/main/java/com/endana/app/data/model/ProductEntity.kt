@@ -1,3 +1,15 @@
 package com.endana.app.data.model
 
-data class PeoductEntity()
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "products_table")
+data class ProductEntity(
+    val image: String,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int,
+    val title: String,
+    val description:  String,
+    val price: Double,
+    val  merchant: String
+)
