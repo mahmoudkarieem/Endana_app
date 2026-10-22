@@ -15,3 +15,13 @@ fun ProductModel.toEntity(): ProductEntity{
 }
 
 
+fun ProductEntity.toDomain(): ProductModel{
+    return ProductModel(
+        id = this.id,
+        image = this.image,
+        description = this.description,
+        title = this.title,
+        merchant = this.merchant,
+        price = this.price
+    )
+}
