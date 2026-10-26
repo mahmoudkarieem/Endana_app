@@ -1,14 +1,9 @@
-package com.endana.app.presentation.view_models
+package com.endana.app.presentation.home
 
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.endana.app.domain.usecase.GetProductsUseCase
-import com.endana.app.presentation.home.HomeUiIntent
-import com.endana.app.presentation.home.HomeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
