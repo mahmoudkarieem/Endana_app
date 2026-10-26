@@ -1,10 +1,7 @@
 package com.endana.app.presentation.screens.detail
 
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.sqlite.SQLITE_DATA_INTEGER
 import com.endana.app.domain.usecase.GetProductByIdUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
