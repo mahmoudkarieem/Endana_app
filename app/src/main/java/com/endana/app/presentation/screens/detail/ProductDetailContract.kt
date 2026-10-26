@@ -8,3 +8,8 @@ data class ProductDetailContract(
     val product: ProductModel?=null
 
         )
+
+
+sealed interface ProductDetailUiIntent{
+    data class LoadProductDetails(val id: Int): ProductDetailUiIntent
+}
