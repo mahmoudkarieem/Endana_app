@@ -10,3 +10,6 @@ data class HomeUiState(
 )
 
 
+sealed interface HomeUiIntent{
+    object LoadProducts : HomeUiIntent
+}
