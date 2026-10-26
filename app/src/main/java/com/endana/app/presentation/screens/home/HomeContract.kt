@@ -1,4 +1,4 @@
-package com.endana.app.presentation.home
+package com.endana.app.presentation.screens.home
 
 import com.endana.app.domain.model.ProductModel
 

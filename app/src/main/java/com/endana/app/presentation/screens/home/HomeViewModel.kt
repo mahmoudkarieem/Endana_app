@@ -1,4 +1,4 @@
-package com.endana.app.presentation.home
+package com.endana.app.presentation.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
