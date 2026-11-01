@@ -35,7 +35,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(inner)
-//                .background(MaterialTheme.colorScheme.background)
+                .background(MaterialTheme.colorScheme.background)
         ) {
             Row(
                 Modifier
