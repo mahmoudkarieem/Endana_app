@@ -1,12 +1,16 @@
 package com.endana.app.presentation.theme
 
+import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalView
+import androidx.core.view.WindowCompat
 
 private val DarkColorScheme: ColorScheme = darkColorScheme(
     primary = Emerald400,
@@ -55,8 +59,7 @@ private val DarkColorScheme: ColorScheme = darkColorScheme(
     scrim = Black,
 )
 
-// The Figma light frame has no error colors or outlines, so those keep
-// the Material 3 defaults.
+
 private val LightColorScheme: ColorScheme = lightColorScheme(
     primary = Green600,
     onPrimary = White,
@@ -104,10 +107,19 @@ fun EndanaTheme(
     content: @Composable () -> Unit
 ) {
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
+    val extraColors = if (darkTheme) DarkExtraColors else LightExtraColors
+
+    val view = LocalView.current
+    if (!view.isInEditMode) {
+        SideEffect {
+            val window = (view.context as Activity).window
+            WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = !darkTheme
+        }
+    }
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
-        content = content
+        content = content,
+        typography = Typography
     )
 }

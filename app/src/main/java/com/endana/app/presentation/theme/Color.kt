@@ -2,25 +2,6 @@ package com.endana.app.presentation.theme
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
-//val MidnightNavy = Color(0xFF010736)
-//val SlateDarkBlue = Color(0xFF0D1C42)
-//val RoyalBlue = Color(0xFF22396F)
-//val SoftCreamLight = Color(0xFFFCF1D0)
-//val BackgroundDark = Color(0xFF010526)
-//val PureWhite = Color(0xFFFFFFFF)
-//val OffWhiteSurface = Color(0xFFF8F9FA)
-//
-//val WhatsAppGreen = Color(0xFF25D366)
-//val ActionGreen = Color(0xFF1FA34A)
-//val WarmAmber = Color(0xFFFFB703)
-//val CyberTeal = Color(0xFF00B4D8)
-//ANDANA — RAW PALETTE
-//  Every value below comes from the Figma file "Andana App Store":
-//    • Dark  = "Glassmorphic Neu-Dark", node 1:5167 (6-screen flow)
-//    • Light = Home screen, node 1:3371
-//  Screens should NOT use these directly — read them through
-//  MaterialTheme.colorScheme.* or MaterialTheme.andanaColors.* (Theme.kt).
-// =====================================================================
 
 // ---- Dark: backgrounds & glass ------------------------------------
 internal val Ink = Color(0xFF07090E)            // screen background

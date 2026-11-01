@@ -6,8 +6,11 @@ import com.endana.app.domain.model.ProductModel
 import com.endana.app.domain.repository.ProductRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-class ProductRepositoryImpl(val productDao: ProductDao): ProductRepository {
+class ProductRepositoryImpl @Inject constructor(
+    val productDao: ProductDao
+) : ProductRepository {
     override fun getProducts(): Flow<List<ProductModel>> {
         return productDao.getProducts().map { entities ->
             entities.map { it.toDomain() }
@@ -15,7 +18,7 @@ class ProductRepositoryImpl(val productDao: ProductDao): ProductRepository {
     }
 
     override suspend fun getProductById(id: Int): ProductModel? {
-      return productDao.getProductById(id = id)?.toDomain()
+        return productDao.getProductById(id = id)?.toDomain()
     }
 
 
