@@ -23,16 +23,16 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun Header(modifier: Modifier = Modifier) {
     Row(
-        modifier = modifier
-
-            .padding(start = 16.dp, end = 16.dp, top = 6.dp, bottom = 8.dp),
+        modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(6.dp),
-            modifier = Modifier.weight(1f)
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier
+                .weight(1f)
+
         ) {
             Box(
                 Modifier
