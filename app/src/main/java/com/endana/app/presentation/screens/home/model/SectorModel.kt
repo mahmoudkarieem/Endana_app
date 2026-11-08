@@ -9,6 +9,7 @@ data class Sector(
     val tint: Color,
     val bg: Color,
 )
+
 val sampleSectors = listOf(
     Sector(
         "Food",
@@ -33,6 +34,7 @@ val sampleSectors = listOf(
     ),
     Sector(
         "Special", "Mit Ghamr",
-        com.endana.app.R.drawable.margin, Color(0xFF4F46E5), Color(0xFFEEF2FF)
+        com.endana.app.R.drawable.container,
+        Color(0xFF4F46E5), Color(0xFFEEF2FF)
     ),
 )

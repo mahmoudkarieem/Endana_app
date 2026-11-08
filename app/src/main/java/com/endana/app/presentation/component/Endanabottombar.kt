@@ -1,11 +1,7 @@
 package com.endana.app.presentation.component
 
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ReceiptLong
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Storefront
+import androidx.annotation.DrawableRes
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -15,16 +11,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-enum class HomeTab(val label: String, val icon: ImageVector) {
-    Hub("Hub", Icons.Filled.Storefront),
-    Search("Search", Icons.Filled.Search),
-    Orders("Orders", Icons.AutoMirrored.Filled.ReceiptLong),
-    Profile("Profile", Icons.Filled.Person),
+enum class HomeTab(val label: String, @DrawableRes val iconRes: Int) {
+    Hub("Hub", com.endana.app.R.drawable.baseline_storefront_24),
+    Search("Search", com.endana.app.R.drawable.baseline_search_24),
+    Orders("Orders", com.endana.app.R.drawable.baseline_receipt_long_24),
+    Profile("Profile", com.endana.app.R.drawable.baseline_person_outline_24),
 }
 
 
@@ -46,8 +42,13 @@ fun AndanaBottomBar(
             NavigationBarItem(
                 selected = isSelected,
                 onClick = { onSelect(tab) },
-                // The label already names the tab for screen readers.
-                icon = { Icon(tab.icon, contentDescription = null) },
+
+                icon = {
+                    Icon(
+                        painter = painterResource(id = tab.iconRes),
+                        contentDescription = tab.label, // 3. Set contentDescription for accessibility
+                    )
+                },
                 label = {
                     Text(
                         tab.label,

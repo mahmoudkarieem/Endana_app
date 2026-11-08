@@ -12,9 +12,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.endana.app.presentation.component.AndanaBottomBar
+import com.endana.app.presentation.component.HomeTab
 import com.endana.app.presentation.screens.home.component.FlashDealBanner
 import com.endana.app.presentation.screens.home.component.Header
 import com.endana.app.presentation.screens.home.component.LocationCard
@@ -25,8 +31,15 @@ import com.endana.app.presentation.screens.home.model.sampleStores
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
+    var selectedTab by remember { mutableStateOf(HomeTab.Hub) }
     Scaffold(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize(),
+        bottomBar = {
+            AndanaBottomBar(
+                selected = selectedTab,
+                onSelect = { tab -> selectedTab = tab }
+            )
+        }
     ) { inner ->
         LazyColumn(
             modifier = Modifier
@@ -83,6 +96,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             ) { _, store ->
                 StoreCard(store = store, modifier = Modifier.fillMaxWidth(), onClick = {})
             }
+
+
         }
     }
 }
