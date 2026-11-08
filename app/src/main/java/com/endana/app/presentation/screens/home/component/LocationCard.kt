@@ -30,7 +30,7 @@ import com.endana.app.R
 @Composable
 fun LocationCard(modifier: Modifier = Modifier) {
     Card(
-        modifier.fillMaxWidth().padding(16.dp),
+        modifier,
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(1.dp),
@@ -53,13 +53,13 @@ fun LocationCard(modifier: Modifier = Modifier) {
                     contentAlignment = Alignment.Center,
                 ) {
                     Icon(
-                    painter = painterResource(R.drawable.baseline_apartment_24),
+                        painter = painterResource(R.drawable.baseline_apartment_24),
                         null,
                         tint = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.size(15.dp)
                     )
                 }
-                Column (modifier = Modifier.padding(4.dp)){
+                Column(modifier = Modifier.padding(4.dp)) {
                     Text(
                         "DELIVER TO (ZERO-MAP)",
                         fontSize = 14.sp,
