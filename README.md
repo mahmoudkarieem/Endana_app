@@ -59,4 +59,4 @@ The UI follows a Figma design ("Andana App Store"). Colors, spacing and typograp
 
 ## Author
 
-[Your name] — [LinkedIn] · [Email]
+Mahmoud kariem -mahmoud.kariem.dev@gmail.com -https://www.linkedin.com/in/mahmoud-kariem/
